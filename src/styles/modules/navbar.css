@@ -1,0 +1,130 @@
+.navbar-container{
+    position: fixed;
+    top: 32px;
+    inline-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    padding-inline: var(--padding-clamp32to16);
+}
+
+.navbar{
+    inline-size: 100%;
+    max-inline-size: 1140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 44px; */
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 6px;
+    padding-inline-start: 18px;
+    border-radius: 100vh;
+    border-radius: var(--border-clamp100to20);
+}
+
+
+/* logo and menu button styles */
+
+.logo-menu__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.menu-cntnr{
+    display: none;
+    background: transparent;
+}
+
+.menu-cntnr svg{
+    --size: 32px;
+    block-size: var(--size);
+    inline-size: var(--size);
+}
+
+
+/* logo and nav links styles */
+
+.logo-links__wrapper{
+    display: flex;
+    align-items: center;
+    gap: 56px;
+}
+
+.separator{
+    block-size: 20px;
+    inline-size: 4px;
+    border-radius: 100vh;
+    background-color: var(--text-sec-lighter);
+}
+
+.nav-links{
+    display: flex;
+    gap: 32px;
+}
+
+.nav-link{
+    color: var(--text-sec-light);
+    transition: color 0.25s ease-in;
+}
+
+.nav-link:hover{
+    color: var(--text-pri);
+}
+
+
+/* nav cta styles */
+
+.nav__cta-button{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--text-pri);
+    color: var(--off-white);
+    border-radius: 100vh;
+    font-size: var(--font-size-16);
+    font-weight: 600;
+    block-size: 44px;
+    inline-size: 120px;
+    outline: none;
+    overflow: hidden;
+}
+
+.nav-login{
+    background-color: transparent;
+    color: var(--text-pri);
+    font-size: var(--font-clamp16to14);
+    /* background: red; */
+    /* inline-size: var(--cta-clamp120to60); */
+}
+
+.nav-login .content{
+    text-shadow: 0px 52px var(--text-pri);
+}
+
+.nav__cta-button:hover .content{
+    transform: translateY(-52px);
+}
+
+@media screen and (max-width:840px){
+    .nav-links{
+        display: none;
+    }
+
+    .menu-cntnr{
+        --size: 38px;
+        block-size: var(--size);
+        inline-size: var(--size);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .separator{
+        display: none;
+    }
+}
