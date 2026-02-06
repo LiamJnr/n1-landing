@@ -3,7 +3,10 @@
     padding-block: 172px;
     display: flex;
     flex-direction: column;
-    gap: 44px;
+    gap: 56px;
+    position: relative;
+    /* block-size: 100vh; */
+    /* background-color: red; */
 }
 
 
@@ -41,13 +44,14 @@
 /* ---------------- form block styles ---------------- */
 .cta-block{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 24px;
     padding-inline: var(--padding-clamp32to16);
 }
 
 .form-wrapper{
-    position: relative;
+    /* position: relative; */
     inline-size: 100%;
     max-inline-size: 440px;
     background-color: var(--off-white);
@@ -55,29 +59,6 @@
     border-radius: var(--border-clamp100to20);
     padding: 8px;
     transition: border-color 0.25s ease-in;
-}
-
-.form-wrapper::after{
-    content: "";
-    position: absolute;
-    inline-size: 10px;
-    block-size: 10px;
-    background-color: var(--text-pri);
-    border-radius: 50%;
-
-    offset-path: inset(0 round var(--border-clamp100to20));
-    offset-distance: 0%;
-    pointer-events: none;
-    animation: orbit 4s linear infinite;
-}
-
-@keyframes orbit{
-    0%{
-        offset-distance: 0%
-    }
-    100%{
-        offset-distance: 100%;
-    }
 }
 
 .email-form{
@@ -99,6 +80,7 @@
     font-weight: 600;
     block-size: 56px;
     inline-size: 160px;
+    overflow: hidden;
 }
 
 .cta-button:hover .content{
@@ -111,6 +93,7 @@
     outline: none;
     block-size: 56px;
     inline-size: 100%;
+    background: transparent;
 }
 
 .cta-form::placeholder{
@@ -120,6 +103,45 @@
 
 .form-wrapper:has(.cta-form:focus-within){
     border-color: var(--text-pri);
+}
+
+.cta-proof{
+    color: var(--text-sec-light);
+}
+
+.cta-proof__content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* gap: 8px; */
+}
+
+.cta-proof__imgs{
+    display: inline-flex;
+    block-size: 20px;
+    inline-size: auto;
+    /* background: red; */
+    padding-inline-start: 16px;
+}
+
+.cta-proof__img{
+    --size: 20px;
+    display: inline-block;
+    block-size: var(--size);
+    inline-size: var(--size);
+    border: 2px solid var(--text-sec-xtralight);
+    border-radius: 50%;
+    background-color: var(--off-white);
+}
+
+.cta-proof__img:nth-child(2){
+    transform: translateX(-8px);
+}
+
+.cta-proof__img:nth-child(3){
+    transform: translateX(-16px);
 }
 
 @media screen and (max-width: 472px){
@@ -134,4 +156,115 @@
     .nav-signup{
         display: none;
     }
+}
+
+
+/* hero canvas styles */
+.hcanvas{
+    position: absolute;
+    display: block;
+    z-index: -1;
+    block-size: 100vh;
+    inline-size: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+/* hero Image styles */
+.hero-image__block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 56px;
+}
+
+.hero-image__wrapper{
+    inline-size: 100%;
+    max-inline-size: 1120px;
+    background-color: red;
+    border: 2px solid green;
+    border-radius: 20px;
+}
+
+.hero-image{
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+}
+
+
+/* hero social proof styles */
+.hero-socialproof{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    inline-size: 100%;
+    gap: 12px;
+}
+
+.hero-logos__block{
+    inline-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logos-container{
+    block-size: 36px;
+    inline-size: 100%;
+    max-inline-size: 1120px;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes scrollLogo {
+    0% {
+        transform: translateX(1120px);
+    }
+    100% {
+        transform: translateX(-180px);
+    }
+}
+
+.logo-wrapper{
+    position: absolute;
+    block-size: 36px;
+    inline-size: 180px;
+    display: grid;
+    place-content: center;
+    will-change: transform;
+    animation: scrollLogo 8s linear infinite;
+}
+
+.logo-wrapper p{
+    color: var(--text-sec-light);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo-wrapper:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.logo-wrapper:nth-child(2) {
+    animation-delay: -1.33s;
+}
+
+.logo-wrapper:nth-child(3) {
+    animation-delay: -2.66s;
+}
+
+.logo-wrapper:nth-child(4) {
+    animation-delay: -4s;
+}
+
+.logo-wrapper:nth-child(5) {
+    animation-delay: -5.33s;
+}
+
+.logo-wrapper:nth-child(6) {
+    animation-delay: -6.66s;
 }
