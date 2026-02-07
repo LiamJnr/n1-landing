@@ -1,12 +1,19 @@
 :root{
 
     /* color styles */
+    --off-black: hsl(240, 100%, 2%);
     --off-white: hsl(220, 100%, 99%);
-    --text-pri: hsl(0, 0%, 7%);
-    --text-sec: hsl(0, 0%, 27%);
-    --text-sec-light: hsl(0, 0%, 47%);
-    --text-sec-lighter: hsl(0, 0%, 67%);
-    --text-sec-xtralight: hsl(0, 0%, 87%);
+    --text-sec: hsl(210, 2%, 84%);
+    --text-sec-light: hsl(0, 0%, 59%);
+    --text-sec-lighter: hsl(0, 0%, 29%);
+    --text-sec-xtralight: hsl(0, 0%, 17%);
+    --text-sec-xtralighter: hsl(0, 0%, 10%);
+    /* --text-pri: hsl(0, 0%, 7%); */
+    /* --text-sec: hsl(0, 0%, 27%); */
+
+    --accent-color: hsl(226, 100%, 54%);
+
+
 
     /* typography styles */
     --font-size-xs: 0.75rem;

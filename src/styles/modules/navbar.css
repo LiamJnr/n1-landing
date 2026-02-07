@@ -16,17 +16,22 @@
     align-items: center;
     justify-content: space-between;
     /* gap: 44px; */
-    background: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    background: var(--text-sec-xtralight);
+    /* backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); */
     padding: 6px;
     padding-inline-start: 18px;
+    /* border: 1px solid var(--text-sec); */
     border-radius: 100vh;
     border-radius: var(--border-clamp100to20);
 }
 
 
 /* logo and menu button styles */
+
+.logo-cntnr h3{
+    color: var(--text-sec);
+}
 
 .logo-menu__wrapper{
     display: flex;
@@ -73,7 +78,7 @@
 }
 
 .nav-link:hover{
-    color: var(--text-pri);
+    color: var(--text-sec);
 }
 
 
@@ -83,7 +88,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--text-pri);
+    background-color: var(--accent-color);
     color: var(--off-white);
     border-radius: 100vh;
     font-size: var(--font-size-16);
@@ -96,14 +101,10 @@
 
 .nav-login{
     background-color: transparent;
-    color: var(--text-pri);
+    color: var(--off-white);
     font-size: var(--font-clamp16to14);
     /* background: red; */
     /* inline-size: var(--cta-clamp120to60); */
-}
-
-.nav-login .content{
-    text-shadow: 0px 52px var(--text-pri);
 }
 
 .nav__cta-button:hover .content{
@@ -122,6 +123,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .menu-cntnr svg{
+        fill: var(--off-white);
     }
 
     .separator{
