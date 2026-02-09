@@ -24,6 +24,7 @@
     /* border: 1px solid var(--text-sec); */
     border-radius: 100vh;
     border-radius: var(--border-clamp100to20);
+    box-shadow: 0px 2px 6px rgba(32, 32, 32, 0.25);
 }
 
 

@@ -1,64 +1,210 @@
-// export function heroCanvas() {
-
-//     /** @type {HTMLCanvasElement} */
-
+// export function heroCanvas(){
+    
+//     const heroSection = document.querySelector('.hero-section');
 //     const canvas = document.getElementById('hero-canvas');
+
+//     if(!heroSection || !canvas) return;
+
 //     const ctx = canvas.getContext('2d');
+//     const step = 50;
 
-//     // Resize canvas to fill the hero area
-//     function resize() {
-//       canvas.width = window.innerWidth;
-//       canvas.height = 600; // Adjust hero height here
-//       draw();
+//     function resize(){
+//         const rect = heroSection.getBoundingClientRect();
+//         const dpr = window.devicePixelRatio || 1;
+
+//         // display size
+//         canvas.style.width = rect.width + 'px';
+//         canvas.style.height = rect.height + 'px';
+
+//         //drawing surface size (scaled for DPI)
+//         canvas.width = rect.width * dpr;
+//         canvas.height = rect.height * dpr;
+
+//         ctx.scale(dpr, dpr);
+        
+//         drawGrid();
 //     }
 
-//     function draw() {
-//       const w = canvas.width;
-//       const h = canvas.height;
-//       const centerX = w / 2;
-//       const centerY = h * 0.8; // Position the "planet" peak
+//     function drawGrid() {
+//         const rect = heroSection.getBoundingClientRect();
+//         const w = rect.width;
+//         const h = rect.height;
+//         const diamondSize = 3; // The "radius" of the diamond
 
-//       // 1. Background: Solid Black
-//       ctx.fillStyle = '#000';
-//       ctx.fillRect(0, 0, w, h);
+//         ctx.clearRect(0, 0, w, h);
 
-//       // 2. The Soft Blue Glow (Radial Gradient)
-//       const glow = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, h * 0.6);
-//       glow.addColorStop(0, 'rgba(0, 110, 255, 0.4)');
-//       glow.addColorStop(1, 'rgba(0, 0, 0, 0)');
-      
-//       ctx.fillStyle = glow;
-//       ctx.fillRect(0, 0, w, h);
+//         // 1. Draw the Lines
+//         ctx.beginPath();
+//         ctx.strokeStyle = 'rgba(124, 124, 124, 0.15)'; // Slightly lighter for the grid
+//         ctx.lineWidth = 1;
 
-//       // 3. The Bright Horizon Line
-//       ctx.beginPath();
-//       // We draw a large ellipse and only stroke the top arc
-//       ctx.ellipse(centerX, centerY + 400, w * 0.7, 420, 0, 0, Math.PI * 2);
-      
-//       ctx.strokeStyle = '#80d4ff'; 
-//       ctx.lineWidth = 2;
-      
-//       // Shadow/Glow effect for the line itself
-//       ctx.shadowBlur = 15;
-//       ctx.shadowColor = '#00a2ff';
-      
-//       ctx.stroke();
+//         for (let y = 0.5; y <= h; y += step) {
+//             ctx.moveTo(0, y);
+//             ctx.lineTo(w, y);
+//         }
+//         for (let x = 0.5; x <= w; x += step) {
+//             ctx.moveTo(x, 0);
+//             ctx.lineTo(x, h);
+//         }
+//         ctx.stroke();
 
-//       // 4. The "Sun" Peak (Central Highlight)
-//       const flare = ctx.createRadialGradient(centerX, centerY - 15, 0, centerX, centerY - 15, 50);
-//       flare.addColorStop(0, 'white');
-//       flare.addColorStop(0.2, 'rgba(173, 216, 230, 0.8)');
-//       flare.addColorStop(1, 'transparent');
-      
-//       ctx.fillStyle = flare;
-//       ctx.globalCompositeOperation = 'lighter'; // Makes it "pop"
-//       ctx.arc(centerX, centerY - 15, 50, 0, Math.PI * 2);
-//       ctx.fill();
+//         // 2. Draw the Diamonds at Intersections
+//         ctx.beginPath();
+//         ctx.fillStyle = 'rgba(124, 124, 124, 0.8)'; // Stronger color for the points
+
+//         for (let x = 0.5; x <= w; x += step) {
+//             for (let y = 0.5; y <= h; y += step) {
+//                 // Draw diamond shape
+//                 ctx.moveTo(x, y - diamondSize); // Top
+//                 ctx.lineTo(x + diamondSize, y); // Right
+//                 ctx.lineTo(x, y + diamondSize); // Bottom
+//                 ctx.lineTo(x - diamondSize, y); // Left
+//                 ctx.closePath();
+//             }
+//         }
+//         ctx.fill();
 //     }
 
+//     // Initialize and listen for changes
 //     window.addEventListener('resize', resize);
 //     resize();
+    
+//     // drawGrid();
 // }
 
 
 
+export function heroCanvas() {
+    const heroSection = document.querySelector('.hero-section');
+    const canvas = document.getElementById('hero-canvas');
+    if (!heroSection || !canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    const step = 50;
+    const diamondSize = 2;
+    let beams = [];
+    let animationFrameId;
+
+    class Beam {
+        constructor(w, h) {
+            this.init(w, h);
+        }
+
+        init(w, h) {
+            this.len = Math.random() * 50 + 10; // Length of the beam
+            this.speed = Math.random() * 2 + 1;  // Speed of travel
+            this.dir = Math.random() > 0.5 ? 'H' : 'V'; // Horizontal or Vertical
+            
+            if (this.dir === 'H') {
+                this.y = Math.floor(Math.random() * (h / step)) * step + 0.5;
+                this.x = -this.len; // Start off-screen left
+            } else {
+                this.x = Math.floor(Math.random() * (w / step)) * step + 0.5;
+                this.y = -this.len; // Start off-screen top
+            }
+            this.color = 'rgba(0, 100, 200,'; // Cyan base
+        }
+
+        update(w, h) {
+            if (this.dir === 'H') this.x += this.speed;
+            else this.y += this.speed;
+
+            // Reset if the tail passes the edge
+            if (this.x > w + this.len || this.y > h + this.len) {
+                this.init(w, h);
+            }
+        }
+
+        draw(ctx) {
+            ctx.lineWidth = 1;
+            let grad;
+
+            if (this.dir === 'H') {
+                grad = ctx.createLinearGradient(this.x - this.len, this.y, this.x, this.y);
+                grad.addColorStop(0, `${this.color} 0)`);
+                grad.addColorStop(1, `${this.color} 0.8)`);
+                ctx.strokeStyle = grad;
+                ctx.beginPath();
+                ctx.moveTo(this.x - this.len, this.y);
+                ctx.lineTo(this.x, this.y);
+            } else {
+                grad = ctx.createLinearGradient(this.x, this.y - this.len, this.x, this.y);
+                grad.addColorStop(0, `${this.color} 0)`);
+                grad.addColorStop(1, `${this.color} 0.8)`);
+                ctx.strokeStyle = grad;
+                ctx.beginPath();
+                ctx.moveTo(this.x, this.y - this.len);
+                ctx.lineTo(this.x, this.y);
+            }
+            ctx.stroke();
+        }
+    }
+
+    function drawStaticElements(w, h) {
+        // Draw Grid Lines
+        ctx.beginPath();
+        ctx.strokeStyle = 'rgba(124, 124, 124, 0.1)';
+        ctx.lineWidth = 1;
+        for (let y = 0.5; y <= h; y += step) {
+            ctx.moveTo(0, y); ctx.lineTo(w, y);
+        }
+        for (let x = 0.5; x <= w; x += step) {
+            ctx.moveTo(x, 0); ctx.lineTo(x, h);
+        }
+        ctx.stroke();
+
+        // Draw Diamonds at intersections
+        ctx.beginPath();
+        ctx.fillStyle = 'rgba(124, 124, 124, 0.4)';
+        for (let x = 0.5; x <= w; x += step) {
+            for (let y = 0.5; y <= h; y += step) {
+                ctx.moveTo(x, y - diamondSize);
+                ctx.lineTo(x + diamondSize, y);
+                ctx.lineTo(x, y + diamondSize);
+                ctx.lineTo(x - diamondSize, y);
+                ctx.closePath();
+            }
+        }
+        ctx.fill();
+    }
+
+    function resize() {
+        const rect = heroSection.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+        canvas.style.width = rect.width + 'px';
+        canvas.style.height = rect.height + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        // Populate Beams
+        beams = Array.from({ length: 15 }, () => new Beam(rect.width, rect.height));
+    }
+
+    function animate() {
+        const rect = heroSection.getBoundingClientRect();
+        ctx.clearRect(0, 0, rect.width, rect.height);
+
+        drawStaticElements(rect.width, rect.height);
+
+        // Draw Beams with a "Glow" effect
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = 'rgba(0, 255, 200, 0.5)';
+        beams.forEach(beam => {
+            beam.update(rect.width, rect.height);
+            beam.draw(ctx);
+        });
+        ctx.shadowBlur = 0; // Reset for performance
+
+        animationFrameId = requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+    animate();
+
+    return () => {
+        window.removeEventListener('resize', resize);
+        cancelAnimationFrame(animationFrameId);
+    };
+}
