@@ -1,4 +1,4 @@
-import { droopyEffect } from "./components/droopyText.js";
+import { counterAnimation, parallaxScroll, textSlideReveal } from "./components/animatons.js";
 import { heroCanvas } from "./components/heroCanvas.js";
 
 document.addEventListener('DOMContentLoaded', () =>{
@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', () =>{
     // hero animation
     heroCanvas();
 
-    // jelly svg
-    droopyEffect();
+    // counter Animation
+    counterAnimation();
+
+    // text slide reveal
+    textSlideReveal();
+
+    // parallax scroll
+    parallaxScroll();
 })

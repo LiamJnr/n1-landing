@@ -1,16 +1,13 @@
 .painpoints-section{
-    gap: 56px;
+    gap: 72px;
     padding-inline: var(--padding-clamp32to16);
 }
 
-.test-svg{
-    background: red;
-}
-
-.svg-wrapper{
+.section-body{
     inline-size: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 56px;
 }
 
 .pain-card__cntnr{
@@ -49,6 +46,73 @@
     background: rgb(245, 245, 245);
 }
 
+/* pain slider styles */
+.pain-sliders__cntnr{
+    inline-size: 100%;
+    max-inline-size: 1120px;
+    position: relative;
+}
+
+.pain-sliders__cntnr::before,
+.pain-sliders__cntnr::after{
+    box-sizing: content-box;
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border: 1.5px dashed gainsboro;
+}
+
+.pain-sliders__cntnr::before{
+    block-size: 100%;
+    inline-size: 105%;
+    padding-block: 4px;
+    border-inline: none;
+}
+
+.pain-sliders__cntnr::after{
+    inline-size: 100%;
+    block-size: 140%;
+    padding-inline: 4px;
+    border-block: none;
+}
+
+.pain-sliders__wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow: hidden;
+}
+
+.pain-slider{
+    inline-size: 100%;
+    block-size: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    /* overflow: hidden; */
+    will-change: transform;
+}
+
+.pain-slider__card{
+    flex-shrink: 0;
+    display: inline-flex;
+    background-color: var(--off-white);
+    inline-size: 260px;
+    inline-size: var(--width-clamp260to180);
+    block-size: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--text-sec);
+    color: var(--text-sec-lighter);
+    font-size: var(--font-clamp16to14);
+}
+
 .pain-point{
     color: var(--text-sec);
     font-weight: 500;
@@ -56,5 +120,74 @@
 }
 
 .pain-point span{
+    color: var(--off-black);
+}
+
+/* visionar block styles */
+.visionary-cntnr{
+    inline-size: 100%;
+    position: relative;
+    /* background: red; */
+    block-size: 200px;
+}
+
+.visionary-cntnr p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: var(--font-size-48);
+    font-size: var(--font-clamp48to32);
+    font-weight: bold;
+    letter-spacing: var(--heading-kern2);
+}
+
+.visionary-cntnr p {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+}
+
+/* mask */
+.char {
+    display: inline-block;
+    overflow: hidden;
+}
+
+/* animated letter */
+.char span {
+    padding: 2px;
+    display: inline-block;
+    transform: translateY(110%);
+    will-change: transform;
+}
+
+/* active state */
+.char.reveal span {
+    transform: translateY(0);
+    transition: transform 0.7s cubic-bezier(.16,1,.3,1);
+}
+
+
+
+/* pain metrics styling */
+.pain-metrics__cntnr{
+    inline-size: 100%;
+    /* background: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 56px;
+}
+
+.metric-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.metric-value__wrapper{
+    font-size: var(--font-size-32);
+    font-weight: 600;
     color: var(--off-black);
 }

@@ -35,6 +35,7 @@
     --cta-clamp120to60: clamp(3.75rem, 2.6786rem + 5.3571vw, 7.5rem);
     --border-clamp100to12: clamp(0.75rem, -0.8214rem + 7.8571vw, 6.25rem);
     --border-clamp100to20: clamp(1.25rem, -0.1786rem + 7.1429vw, 6.25rem);
+    --width-clamp260to180: clamp(12.5rem, 11.4286rem + 5.3571vw, 16.25rem);
 
 
     /* kerning */
