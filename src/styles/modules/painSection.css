@@ -1,6 +1,7 @@
 .painpoints-section{
     gap: 72px;
     padding-inline: var(--padding-clamp32to16);
+    /* background-color: rgb(224, 224, 224); */
 }
 
 .section-body{
