@@ -1,4 +1,4 @@
-:root{
+:root {
 
     /* color styles */
     --off-black: hsl(240, 100%, 2%);
@@ -15,7 +15,6 @@
     /* --accent-color: rgb(108, 255, 23); */
 
 
-
     /* typography styles */
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
@@ -30,6 +29,19 @@
     --font-size-64: 4rem;
     --font-size-72: 4.5rem;
 
+
+    /* responsive clamp typography styles 1440px screen to 320px screen*/
+    --font-clamp16to14: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);
+    --font-clamp18to16: clamp(1rem, 0.9643rem + 0.1786vw, 1.125rem);
+    --font-clamp20to16: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
+    --font-clamp24to18: clamp(1.125rem, 1.0179rem + 0.5357vw, 1.5rem);
+    --font-clamp32to20: clamp(1.25rem, 1.0357rem + 1.0714vw, 2rem);
+    --font-clamp40to24: clamp(1.5rem, 1.2143rem + 1.4286vw, 2.5rem);
+    --font-clamp48to32: clamp(2rem, 1.7143rem + 1.4286vw, 3rem);
+    --font-clamp72to44: clamp(2.75rem, 2.25rem + 2.5vw, 4.5rem);
+    --font-clamp72to32: clamp(2.75rem, 2.25rem + 2.5vw, 4.5rem);
+
+
     /* layout styles */
     --padding-clamp32to16: clamp(1rem, 0.7143rem + 1.4286vw, 2rem);
     --cta-clamp120to60: clamp(3.75rem, 2.6786rem + 5.3571vw, 7.5rem);
@@ -42,14 +54,6 @@
     --heading-kern: -2.5px;
     --heading-kern2: -1.8px;
 
-    /* responsive clamp typography styles 1440px screen to 320px screen*/
-    --font-clamp16to14: clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);
-    --font-clamp20to16: clamp(1rem, 0.9286rem + 0.3571vw, 1.25rem);
-    --font-clamp24to18: clamp(1.125rem, 1.0179rem + 0.5357vw, 1.5rem);
-    --font-clamp32to20: clamp(1.25rem, 1.0357rem + 1.0714vw, 2rem);
-    --font-clamp40to24: clamp(1.5rem, 1.2143rem + 1.4286vw, 2.5rem);
-    --font-clamp48to32: clamp(2rem, 1.7143rem + 1.4286vw, 3rem);
-    --font-clamp72to44: clamp(2.75rem, 2.25rem + 2.5vw, 4.5rem);
 
     /* animation styles */
     --no-of-logos: 6;

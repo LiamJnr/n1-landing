@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NexusOne Landing Page</title>
     <link rel="stylesheet" href="./src/styles/main.css">
 </head>
+
 <body>
     <!-- navbar styles -->
     <div class="navbar-container">
@@ -13,8 +15,10 @@
             <div class="logo-links__wrapper">
                 <div class="logo-menu__wrapper">
                     <button class="menu-cntnr">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
                         </svg>
                     </button>
                     <div class="logo-cntnr">
@@ -43,13 +47,14 @@
             <div class="heading-block">
                 <div class="heading-wrapper">
                     <h1 class="hero-heading">Your Business On Autopilot</h1>
-                    <p class="hero-sub-heading">No more manual spreadsheet calculations and tax filings. We automate it all for you.</p>
+                    <p class="hero-sub-heading">No more manual spreadsheet calculations and tax filings. We automate it
+                        all for you.</p>
                 </div>
             </div>
             <div class="cta-block">
                 <div class="form-wrapper">
                     <form class="email-form" action="">
-                        <input class="cta-form" type="email" placeholder="Enter your email address" />
+                        <input class="cta-form" type="email" placeholder="example@gmail.com" />
                         <a href="#" id="hero-cta" class="cta-button"><span class="content">Save 15+ hours</span></a>
                     </form>
                 </div>
@@ -60,103 +65,150 @@
         </div>
 
         <!-- hero dashboard image -->
-         <div class="hero-image__block">
+        <div class="hero-image__block">
             <div class="hero-image__wrapper">
-                <img class="hero-image" src="./assets/Stack2.png" alt="hero dashboard image">
-            </div>
-            <div class="hero-socialproof">
-                <div class="trustlabel">
-                    <p>trusted by over 200 visionaries</p>
-                </div>
-
-                <div class="hero-logos__block">
-                    <div class="logos-container">
-                        <div class="logo-wrapper">
-                            <p>pheonix</p>
+                <div class="hero-dashboard">
+                    <div class="hero-dashboard__sidebar">
+                        <div class="hside__logo">
+                            <p>Nexus1</p>
+                            <div class="hside__menu-btn"></div>
                         </div>
-                        <div class="logo-wrapper">
-                            <p>retina</p>
-                        </div>
-                        <div class="logo-wrapper">
-                            <p>nexus1</p>
-                        </div>
-                        <div class="logo-wrapper">
-                            <p>abslt</p>
-                        </div>
-                        <div class="logo-wrapper">
-                            <p>renov8</p>
-                        </div>
-                        <div class="logo-wrapper">
-                            <p>apollo</p>
+                        <div class="hside__tabs">
+                            <button class="hside__tab-cntnr">
+                                <div class="hside__tab-icon"></div>
+                                <p>Staff Management</p>
+                            </button>
+                            <button class="hside__tab-cntnr">
+                                <div class="hside__tab-icon"></div>
+                                <p>Recruitment</p>
+                            </button>
+                            <button class="hside__tab-cntnr">
+                                <div class="hside__tab-icon"></div>
+                                <p>Leave & Attendance</p>
+                            </button>
+                            <button class="hside__tab-cntnr">
+                                <div class="hside__tab-icon"></div>
+                                <p>Performance & Growth</p>
+                            </button>
+                            <button class="hside__tab-cntnr">
+                                <div class="hside__tab-icon"></div>
+                                <p>Payroll System</p>
+                            </button>
+                            <button class="hside__tab-cntnr">
+                                <div class="hside__tab-icon"></div>
+                                <p>Accounting & Ledger</p>
+                            </button>
+                            <button class="hside__tab-cntnr">
+                                <div class="hside__tab-icon"></div>
+                                <p>CRM & Sales</p>
+                            </button>
+                            <button class="hside__tab-cntnr">
+                                <div class="hside__tab-icon"></div>
+                                <p>Inventory & Supply</p>
+                            </button>
+                            <button class="hside__tab-cntnr">
+                                <div class="hside__tab-icon"></div>
+                                <p>Logistics</p>
+                            </button>
                         </div>
                     </div>
+                    <div class="hero-dashboard__main-content"></div>
+
                 </div>
+                <!-- <img class="hero-image" src="./assets/Stack2.png" alt="hero dashboard image"> -->
             </div>
-         </div>
+        </div>
 
         <!-- hero canvas -->
         <canvas class="hcanvas" id="hero-canvas"></canvas>
     </header>
+    <div class="hero-socialproof">
+        <div class="trustlabel">
+            <p>trusted by over 200 visionaries</p>
+        </div>
+
+        <div class="hero-logos__block">
+            <div class="logos-container">
+                <div class="logo-wrapper">
+                    <p>pheonix</p>
+                </div>
+                <div class="logo-wrapper">
+                    <p>retina</p>
+                </div>
+                <div class="logo-wrapper">
+                    <p>nexus1</p>
+                </div>
+                <div class="logo-wrapper">
+                    <p>abslt</p>
+                </div>
+                <div class="logo-wrapper">
+                    <p>renov8</p>
+                </div>
+                <div class="logo-wrapper">
+                    <p>apollo</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-review__card">
+            <div class="review-header">
+                <div class="review-avatar">
+                    <span>SK</span>
+                </div>
+                <div class="review-author">
+                    <p class="author-name">Sarah Kofi</p>
+                    <p class="author-role">Finance Director, Retina Inc</p>
+                </div>
+            </div>
+            <p class="review-text">"NexusOne cut our payroll processing time from 6 hours to 20 minutes. The
+                automated tax calculations are flawless."
+            </p>
+        </div>
+    </div>
     <section class="painpoints-section section">
         <div class="section-heading__block">
             <h2 class="section-heading">Never Think About Tax Math Again</h2>
             <p class="section-subheading"></p>
         </div>
         <div class="section-body">
+
+            <div class="pain-sliders__block">
+                <p class="pain-sliders__intro">Your problems are a thing of the past</p>
+                <div class="pain-sliders__cntnr">
+                    <div class="pain-sliders__wrapper">
+                        <div class="pain-slider pain-slider__top">
+                            <span class="pain-slider__card">Never sure your payroll math is correct</span>
+                            <span class="pain-slider__card">Small mistakes can trigger penalties</span>
+                            <span class="pain-slider__card">Tax rules feel easy to misapply</span>
+                            <span class="pain-slider__card">Compliance deadlines always feel risky</span>
+                            <span class="pain-slider__card">One wrong figure can cause trouble</span>
+                        </div>
+                        <div class="pain-slider pain-slider__middle">
+                            <span class="pain-slider__card">Payroll day means double-checking numbers</span>
+                            <span class="pain-slider__card">Spreadsheets break when things change</span>
+                            <span class="pain-slider__card">Time wasted doing manual calulations</span>
+                            <span class="pain-slider__card">One update forces a full recalculation</span>
+                            <span class="pain-slider__card">Payroll work keeps dragging on</span>
+                        </div>
+                        <div class="pain-slider pain-slider__bottom">
+                            <span class="pain-slider__card">Hard to explain deductions to employees</span>
+                            <span class="pain-slider__card">No clear trail when numbers don't add up</span>
+                            <span class="pain-slider__card">Tax math steals time from real work</span>
+                            <span class="pain-slider__card">Fixing errors take longer than expected</span>
+                            <span class="pain-slider__card">Payroll day always feels stressful</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="pain-card__cntnr">
-                <span class="pain-point">Manual payroll isn't just slow, it's risky. <span>NexusOne handles the complexity of Ghana's statutory requirements automatically.</span></span>
-            </div>
-            <div class="pain-sliders__cntnr">
-                <div class="pain-sliders__wrapper">
-                    <div class="pain-slider pain-slider__top">
-                        <span class="pain-slider__card">Never sure your payroll math is correct</span>
-                        <span class="pain-slider__card">Small mistakes can trigger penalties</span>
-                        <span class="pain-slider__card">Tax rules feel easy to misapply</span>
-                        <span class="pain-slider__card">Compliance deadlines always feel risky</span>
-                        <span class="pain-slider__card">One wrong figure can cause trouble</span>
-                    </div>
-                    <div class="pain-slider pain-slider__middle">
-                        <span class="pain-slider__card">Payroll day means double-checking numbers</span>
-                        <span class="pain-slider__card">Spreadsheets break when things change</span>
-                        <span class="pain-slider__card">Time wasted doing manual calulations</span>
-                        <span class="pain-slider__card">One update forces a full recalculation</span>
-                        <span class="pain-slider__card">Payroll work keeps dragging on</span>
-                    </div>
-                    <div class="pain-slider pain-slider__bottom">
-                        <span class="pain-slider__card">Hard to explain deductions to employees</span>
-                        <span class="pain-slider__card">No clear trail when numbers don't add up</span>
-                        <span class="pain-slider__card">Tax math steals time from real work</span>
-                        <span class="pain-slider__card">Fixing errors take longer than expected</span>
-                        <span class="pain-slider__card">Payroll day always feels stressful</span>
-                    </div>
-                </div>
-            </div>
-            <div class="visionary-cntnr">
-                <p>EXPERIENCE</p>
-            </div>
-            <div class="pain-metrics__cntnr">
-                <div class="metric-card">
-                    <span class="metric-value__wrapper"><span class="metric-value">78</span>%</span>
-                    <span class="metric-description">faster task completions</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-value__wrapper"><span class="metric-value">90</span>%</span>
-                    <span class="metric-description">productivity increase</span>
-                </div>
-                <div class="metric-card">
-                    <span class="metric-value__wrapper"><span class="metric-value">15</span>+</span>
-                    <span class="metric-description">hours saved weekly</span>
-                </div>
+                <span class="pain-point">Manual payroll isn't just slow, it's risky. <span>NexusOne handles the
+                        complexity of Ghana's statutory requirements automatically.</span>
+                </span>
             </div>
         </div>
-        <!-- <div class="svg-wrapper">
-            <svg id="jelly-svg" class="test-svg" viewBox="0 0 800 200" width="800" height="200" xmlns="http://www.w3.org/2000/svg">
-                <text class="jelly-text" x="50%" y="50%" text-anchor="middle" alignment-baseline="central" font-size="42" fill="black">Impossible is Nothing</text>
-            </svg>
-        </div> -->
     </section>
-    
-    
+
+
     <script type="module" src="./src/main.js"></script>
 </body>
+
 </html>
