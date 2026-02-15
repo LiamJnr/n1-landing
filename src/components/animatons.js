@@ -1,3 +1,4 @@
+// counter animation
 export function counterAnimation() {
     const counters = document.querySelectorAll('.metric-value');
 
@@ -42,6 +43,7 @@ export function counterAnimation() {
 
 }
 
+// pain slider parallax animation
 export function parallaxScroll() {
     const container = document.querySelector('.pain-sliders__cntnr');
 
@@ -75,4 +77,70 @@ export function parallaxScroll() {
     window.addEventListener('resize', animate);
     animate();
 
+}
+
+// rect text reveal animation
+export function rectTextReveal() {
+    const paragraphs = document.querySelectorAll('.rectrev-paragraph');
+
+    paragraphs.forEach(para => {
+        const text = para.textContent;
+
+        // regex that matches just one word
+        const words = text.match(/\S+/g);
+
+        // map words to span wrapped words
+        const spanWrappedWords = words.map(word => `<span class="word">${word}</span>`).join(' ');
+
+        // set the innerHTML of para to spanWrappedWords
+        para.innerHTML = spanWrappedWords;
+    });
+
+    const wrapper = document.querySelector('.rect-text__wrapper');
+    const spanWords = document.querySelectorAll('.word');
+
+    if (!wrapper || spanWords.length === 0) return;
+
+    let isVisible = false;
+
+    const updateScrollEffect = () => {
+        if (!isVisible) return;
+
+        const section = wrapper.getBoundingClientRect();
+        const viewHeight = window.innerHeight;
+
+        // Calculate progress (0 to 1)
+        const progress = Math.min(Math.max((viewHeight - section.top) / section.height, 0), 1);
+        const totalSpans = spanWords.length;
+
+        // 1. Block Entrance Logic (0 to 1 progress)
+        const showCount = Math.floor(progress * totalSpans);
+
+        // 2. Text Reveal Logic (Starts at 0.5 progress)
+        const revealCount = progress >= 0.5
+            ? Math.floor((progress - 0.5) * 2 * totalSpans)
+            : 0;
+
+        spanWords.forEach((span, index) => {
+            // Toggle blocks
+            span.classList.toggle('block-in', index < showCount);
+            // Toggle text reveal
+            span.classList.toggle('reveal-text', index < revealCount);
+        });
+
+        // Request next frame
+        requestAnimationFrame(updateScrollEffect);
+    };
+
+    // Intersection Observer to toggle the rAF loop
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            isVisible = entry.isIntersecting;
+            if (isVisible) {
+                requestAnimationFrame(updateScrollEffect);
+            }
+        });
+    }, { threshold: [0, 0.1, 0.5, 1.0] });
+
+    observer.observe(wrapper);
 }

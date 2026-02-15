@@ -1,4 +1,4 @@
-import { counterAnimation, parallaxScroll } from "./components/animatons.js";
+import { counterAnimation, parallaxScroll, rectTextReveal } from "./components/animatons.js";
 import { liquidShader } from "./components/liquidShader.js";
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,4 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // parallax scroll
     parallaxScroll();
+
+    // rect text reveal scroll effect
+    rectTextReveal();
 })
