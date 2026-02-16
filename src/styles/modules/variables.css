@@ -12,7 +12,10 @@
     /* --text-sec: hsl(0, 0%, 27%); */
 
     --accent-color: hsl(234, 100%, 56%);
-    /* --accent-color: rgb(108, 255, 23); */
+    --accent-color-light: hsl(234, 100%, 66%);
+    --accent-color-lighter: hsl(234, 100%, 76%);
+    --accent-color-lightest: hsl(212, 100%, 75%);
+    --accent-color2: hsl(98, 100%, 55%);
 
 
     /* typography styles */
@@ -45,6 +48,7 @@
     /* layout styles 1440px screen to 320px screen*/
     --padding-clamp32to16: clamp(1rem, 0.7143rem + 1.4286vw, 2rem);
     --padding-clamp32to8: clamp(0.5rem, 0.0714rem + 2.1429vw, 2rem);
+    --padding-clamp32to0: clamp(0rem, -0.5714rem + 2.8571vw, 2rem);
     --padding-clamp72to16: clamp(2.25rem, 1.2143rem + 5.3571vw, 4.5rem);
     --cta-clamp120to60: clamp(3.75rem, 2.6786rem + 5.3571vw, 7.5rem);
     --border-clamp100to12: clamp(0.75rem, -0.8214rem + 7.8571vw, 6.25rem);

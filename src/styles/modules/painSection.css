@@ -1,6 +1,5 @@
 .painpoints-section {
     gap: 72px;
-    padding-inline: var(--padding-clamp32to16);
     /* background-color: rgb(224, 224, 224); */
 }
 
@@ -16,6 +15,7 @@
     max-inline-size: 1120px;
     text-align: left;
     border-radius: 24px;
+    padding-inline: var(--padding-clamp32to16);
 }
 
 /* --------------- pain slider styles --------------- */
@@ -26,6 +26,7 @@
     inline-size: 100%;
     max-inline-size: 1120px;
     gap: 12px;
+    padding-inline: var(--padding-clamp32to16);
 }
 
 .pain-sliders__intro {
@@ -95,7 +96,7 @@
     justify-content: center;
     inline-size: 100%;
     color: var(--off-white);
-    /* padding-inline: var(--padding-clamp32to8); */
+    padding-inline: var(--padding-clamp32to0);
 }
 
 .solutions-wrapper {
@@ -126,7 +127,7 @@
 .solutions-intro__heading {
     font-size: var(--font-size-sm);
     font-weight: 600;
-    color: var(--accent-color);
+    color: var(--accent-color2);
     position: relative;
 }
 
@@ -135,7 +136,7 @@
     content: '';
     block-size: 2px;
     inline-size: 100%;
-    background: var(--accent-color);
+    background: var(--accent-color2);
     top: 100%;
     left: 0;
     transform: translateY(6px);
@@ -184,52 +185,8 @@
     line-height: 1.3;
     color: var(--off-white);
     max-inline-size: 720px;
-    text-align: center;
+    text-align: left;
 }
-
-/* .word {
-    position: relative;
-    display: inline-block;
-    color: transparent;
-    overflow: hidden;
-} */
-
-/* The colored block pseudo-element */
-/* .word::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--accent-color);
-    background-color: var(--text-sec-xtralight);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.35s cubic-bezier(0.77, 0, 0.175, 1);
-    border-radius: 100vh;
-} */
-
-/* Phase 1: Block slides in from the left */
-/* .word.block-in::after {
-    transform: scaleX(1);
-    transform-origin: left;
-} */
-
-/* Phase 2: Block slides out to the right, revealing text */
-/* .word.reveal-text {
-    color: var(--off-white);
-} */
-
-/* .word.reveal-text::after {
-    transform: scaleX(0);
-    transform-origin: right;
-} */
-
-
-/* .paragraph {
-    line-height: 1.2;
-    color: azure;
-    font-weight: 600;
-    font-size: 18px;
-} */
 
 .word {
     line-height: 1.6;
@@ -248,4 +205,27 @@
 .word.reveal-text {
     color: azure;
     background-color: transparent;
+}
+
+
+/* product showcase styles */
+.product-showcase__block {
+    inline-size: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    padding-inline: var(--padding-clamp32to8);
+}
+
+.product-showcase__cntnr {
+    /* wraps the cards */
+    inline-size: 100%;
+}
+
+.product-ui__card {
+    background: gainsboro;
+}
+
+.product-ui__illustration {
+    block-size: 380px;
 }
