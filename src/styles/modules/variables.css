@@ -50,6 +50,7 @@
     --padding-clamp32to8: clamp(0.5rem, 0.0714rem + 2.1429vw, 2rem);
     --padding-clamp32to0: clamp(0rem, -0.5714rem + 2.8571vw, 2rem);
     --padding-clamp72to16: clamp(2.25rem, 1.2143rem + 5.3571vw, 4.5rem);
+    --padding-clamp16to8: clamp(0.5rem, 0.0714rem + 2.1429vw, 1rem);
     --cta-clamp120to60: clamp(3.75rem, 2.6786rem + 5.3571vw, 7.5rem);
     --border-clamp100to12: clamp(0.75rem, -0.8214rem + 7.8571vw, 6.25rem);
     --border-clamp100to20: clamp(1.25rem, -0.1786rem + 7.1429vw, 6.25rem);

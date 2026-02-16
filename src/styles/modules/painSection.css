@@ -108,12 +108,10 @@
     align-items: center;
     gap: 24px;
     overflow: hidden;
-    /* padding: var(--padding-clamp32to16); */
 }
 
 .solutions-intro {
     inline-size: 100%;
-    /* background: rgb(26, 26, 26); */
     padding: var(--padding-clamp72to16);
 }
 
@@ -214,18 +212,48 @@
     display: flex;
     align-items: start;
     justify-content: center;
-    padding-inline: var(--padding-clamp32to8);
+    padding-inline: var(--padding-clamp16to8);
 }
 
 .product-showcase__cntnr {
     /* wraps the cards */
     inline-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--padding-clamp16to8);
+    padding-block: var(--padding-clamp16to8);
 }
 
 .product-ui__card {
-    background: gainsboro;
+    --breakpoint: 440px;
+    background: rgb(29, 29, 29);
+    padding: 4px;
+    flex: 1 1 var(--breakpoint);
+    border-radius: 12px;
 }
 
 .product-ui__illustration {
     block-size: 380px;
+    /* background: red; */
+}
+
+.product-ui__description {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px;
+}
+
+.product-ui__title {
+    font-size: var(--font-clamp24to18);
+    /* font-weight: 500; */
+    color: var(--off-white);
+}
+
+.product-ui__summary {
+    font-size: var(--font-clamp16to14);
+    /* font-weight: 600; */
+    color: var(--text-sec-light);
 }
