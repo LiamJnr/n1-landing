@@ -28,21 +28,27 @@
 .heading-wrapper {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 12px;
 }
 
 .hero-heading {
     font-size: var(--font-clamp72to32);
     font-weight: 600;
+    font-weight: 500;
     letter-spacing: var(--heading-kern);
     line-height: 1;
     color: var(--text-sec);
+    max-inline-size: clamp(16.25rem, 3.0357rem + 66.0714vw, 62.5rem);
+    /* background: red; */
 }
 
 .hero-sub-heading {
     font-size: var(--font-clamp18to16);
     font-weight: 500;
     color: var(--text-sec-light);
+    max-inline-size: clamp(12.5rem, -1.7857rem + 71.4286vw, 62.5rem);
+    /* background: yellow; */
 }
 
 
@@ -50,9 +56,11 @@
 .cta-block {
     display: flex;
     flex-direction: column;
+    inline-size: 100%;
     align-items: center;
     gap: 24px;
     padding-inline: var(--padding-clamp32to16);
+    /* background: red; */
 }
 
 .form-wrapper {

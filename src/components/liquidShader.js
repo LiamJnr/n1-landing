@@ -525,8 +525,8 @@ export function liquidShader() {
       col *= 1.0 + dot(col, vec3(0.2126, 0.7152, 0.0722)) * 0.4;
 
       float bottomFade = (1.0 - uv.y);
-      bottomFade *= bottomFade; 
-      col *= bottomFade * 0.94 + 0.06;
+      bottomFade *= bottomFade;
+      col *= bottomFade * 0.94 + 0.3;
 
       gl_FragColor = vec4(col, 1.0);
     }
