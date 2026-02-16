@@ -324,15 +324,140 @@
                                     <p class="product-ui__title">Payroll summary</p>
                                     <p class="product-ui__summary">See all your payroll data in one place</p>
                                 </div>
-                                <div class="product-ui__illustration"></div>
+                                <div class="product-ui__illustration">
+                                    <div class="payroll-dashboard">
+                                        <div class="pay-dash__header">
+                                            <div class="pay-dash__pill">Payroll Live</div>
+                                            <div class="pay-dash__total">
+                                                <span class="pay-label">Total Disbursement</span>
+                                                <span class="pay-amount">₵142,500.00</span>
+                                            </div>
+                                        </div>
+                                        <div class="pay-dash__chart">
+                                            <div class="pay-bar" style="--h: 40%"></div>
+                                            <div class="pay-bar active" style="--h: 70%"></div>
+                                            <div class="pay-bar" style="--h: 55%"></div>
+                                            <div class="pay-bar" style="--h: 90%"></div>
+                                            <div class="pay-bar" style="--h: 65%"></div>
+                                            <div class="pay-bar" style="--h: 30%"></div>
+                                            <div class="pay-bar" style="--h: 50%"></div>
+                                        </div>
+                                        <div class="pay-dash__list">
+                                            <div class="pay-item">
+                                                <div class="pay-item__icon"></div>
+                                                <div class="pay-item__details">
+                                                    <div class="pay-item__line"></div>
+                                                    <div class="pay-item__line short"></div>
+                                                </div>
+                                                <div class="pay-item__val">₵24,400</div>
+                                            </div>
+                                            <div class="pay-item">
+                                                <div class="pay-item__icon"></div>
+                                                <div class="pay-item__details">
+                                                    <div class="pay-item__line"></div>
+                                                    <div class="pay-item__line short"></div>
+                                                </div>
+                                                <div class="pay-item__val">₵18,150</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="product-ui__card payroll-ui__card">
+                            <div class="product-ui__card statutory-ui__card">
                                 <div class="product-ui__description">
                                     <p class="product-ui__title">Statutory breakdown</p>
                                     <p class="product-ui__summary">Get access to all your statutory payments in one
                                         place</p>
                                 </div>
-                                <div class="product-ui__illustration"></div>
+                                <div class="product-ui__illustration">
+                                    <div class="statutory-dashboard">
+                                        <div class="stat-dash__header">
+                                            <div class="stat-dash__badge">Compliant</div>
+                                            <div class="stat-dash__info">
+                                                <span class="stat-info__label">Monthly Tax</span>
+                                                <span class="stat-info__val">₵84,210</span>
+                                            </div>
+                                        </div>
+                                        <div class="stat-dash__visual">
+                                            <div class="stat-donut">
+                                                <svg viewBox="0 0 100 100">
+                                                    <circle class="stat-donut__bg" cx="50" cy="50" r="40"></circle>
+                                                    <circle class="stat-donut__fill" cx="50" cy="50" r="40"
+                                                        style="--offset: 120"></circle>
+                                                </svg>
+                                                <div class="stat-donut__content">
+                                                    <span class="stat-donut__val">92%</span>
+                                                    <span class="stat-donut__label">Ready</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="stat-dash__rows">
+                                            <div class="stat-row">
+                                                <div class="stat-row__meta">
+                                                    <span>PAYE Tax</span>
+                                                    <span class="stat-row__percent">100%</span>
+                                                </div>
+                                                <div class="stat-row__progress">
+                                                    <div class="stat-row__bar full"></div>
+                                                </div>
+                                            </div>
+                                            <div class="stat-row">
+                                                <div class="stat-row__meta">
+                                                    <span>SSNIT Contribution</span>
+                                                    <span class="stat-row__percent">85%</span>
+                                                </div>
+                                                <div class="stat-row__progress">
+                                                    <div class="stat-row__bar" style="--w: 85%"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-ui__card inventory-ui__card">
+                                <div class="product-ui__description">
+                                    <p class="product-ui__title">Inventory levels</p>
+                                    <p class="product-ui__summary">Track your inventory levels in real-time</p>
+                                </div>
+                                <div class="product-ui__illustration">
+                                    <div class="inventory-dashboard">
+                                        <div class="inv-dash__header">
+                                            <div class="inv-dash__badge">In Stock</div>
+                                            <div class="inv-dash__stats">
+                                                <span class="inv-label">Total Items</span>
+                                                <span class="inv-val">2,840</span>
+                                            </div>
+                                        </div>
+                                        <div class="inv-dash__visual">
+                                            <div class="inv-chart">
+                                                <div class="inv-bar" style="--h: 60%"></div>
+                                                <div class="inv-bar" style="--h: 85%"></div>
+                                                <div class="inv-bar active" style="--h: 45%"></div>
+                                                <div class="inv-bar" style="--h: 70%"></div>
+                                                <div class="inv-bar" style="--h: 30%"></div>
+                                                <div class="inv-bar" style="--h: 90%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="inv-dash__items">
+                                            <div class="inv-item">
+                                                <div class="inv-item__img"></div>
+                                                <div class="inv-item__info">
+                                                    <div class="inv-item__line"></div>
+                                                    <div class="inv-item__line short"></div>
+                                                </div>
+                                                <div class="inv-item__tag">84 in stock</div>
+                                            </div>
+                                            <div class="inv-item">
+                                                <div class="inv-item__img"></div>
+                                                <div class="inv-item__info">
+                                                    <div class="inv-item__line"></div>
+                                                    <div class="inv-item__line short"></div>
+                                                </div>
+                                                <div class="inv-item__tag warn">12 low</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

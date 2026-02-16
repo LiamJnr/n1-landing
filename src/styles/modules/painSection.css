@@ -257,3 +257,407 @@
     /* font-weight: 600; */
     color: var(--text-sec-light);
 }
+
+
+/* payroll dashboard visual styles */
+.product-ui__illustration {
+    block-size: 380px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(40, 40, 40, 0.4) 0%, rgba(20, 20, 20, 0.6) 100%);
+    border-radius: 8px;
+    margin: 4px;
+}
+
+.payroll-dashboard {
+    inline-size: 85%;
+    block-size: 85%;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.pay-dash__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.pay-dash__pill {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 100vh;
+    background: rgba(158, 255, 0, 0.1);
+    color: var(--accent-color2);
+    border: 1px solid rgba(158, 255, 0, 0.2);
+}
+
+.pay-dash__total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.pay-label {
+    font-size: 11px;
+    color: var(--text-sec-light);
+}
+
+.pay-amount {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--off-white);
+}
+
+.pay-dash__chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    block-size: 80px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pay-bar {
+    inline-size: 12%;
+    block-size: var(--h);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px 4px 2px 2px;
+    transition: transform 0.3s ease;
+}
+
+.pay-bar.active {
+    background: var(--accent-color2);
+    box-shadow: 0 4px 12px rgba(158, 255, 0, 0.3);
+}
+
+.pay-dash__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pay-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pay-item__icon {
+    inline-size: 32px;
+    block-size: 32px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+}
+
+.pay-item__details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pay-item__line {
+    inline-size: 60%;
+    block-size: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+}
+
+.pay-item__line.short {
+    inline-size: 30%;
+}
+
+.pay-item__val {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-sec-light);
+}
+
+/* statutory dashboard visual styles */
+.statutory-dashboard {
+    inline-size: 85%;
+    block-size: 85%;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.stat-dash__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-dash__badge {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 100vh;
+    background: rgba(158, 255, 0, 0.1);
+    color: var(--accent-color2);
+    border: 1px solid rgba(158, 255, 0, 0.2);
+}
+
+.stat-dash__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.stat-info__label {
+    font-size: 11px;
+    color: var(--text-sec-light);
+}
+
+.stat-info__val {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--off-white);
+}
+
+.stat-dash__visual {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-donut {
+    position: relative;
+    inline-size: 120px;
+    block-size: 120px;
+}
+
+.stat-donut svg {
+    transform: rotate(-90deg);
+}
+
+.stat-donut circle {
+    fill: none;
+    stroke-width: 8;
+}
+
+.stat-donut__bg {
+    stroke: rgba(255, 255, 255, 0.05);
+}
+
+.stat-donut__fill {
+    stroke: var(--accent-color2);
+    stroke-dasharray: 251.2;
+    /* 2 * pi * 40 */
+    stroke-dashoffset: var(--offset);
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s ease-out;
+}
+
+.stat-donut__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-donut__val {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--off-white);
+}
+
+.stat-donut__label {
+    font-size: 10px;
+    color: var(--text-sec-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-dash__rows {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.stat-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-row__meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.stat-row__meta span:first-child {
+    color: var(--text-sec-light);
+}
+
+.stat-row__percent {
+    color: var(--accent-color2);
+    font-weight: 600;
+}
+
+.stat-row__progress {
+    block-size: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 100vh;
+    overflow: hidden;
+}
+
+.stat-row__bar {
+    block-size: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    inline-size: var(--w, 0%);
+    border-radius: 100vh;
+}
+
+.stat-row__bar.full {
+    inline-size: 100%;
+    background: var(--accent-color2);
+}
+
+/* inventory dashboard visual styles */
+.inventory-dashboard {
+    inline-size: 85%;
+    block-size: 85%;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.inv-dash__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inv-dash__badge {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 100vh;
+    background: rgba(158, 255, 0, 0.1);
+    color: var(--accent-color2);
+    border: 1px solid rgba(158, 255, 0, 0.2);
+}
+
+.inv-dash__stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.inv-label {
+    font-size: 11px;
+    color: var(--text-sec-light);
+}
+
+.inv-val {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--off-white);
+}
+
+.inv-dash__visual {
+    inline-size: 100%;
+    block-size: 60px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.inv-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    block-size: 100%;
+    gap: 8px;
+}
+
+.inv-bar {
+    flex: 1;
+    block-size: var(--h, 20%);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 3px;
+    transition: block-size 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.inv-bar.active {
+    background: var(--accent-color2);
+}
+
+.inv-dash__items {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.inv-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.inv-item__img {
+    inline-size: 40px;
+    block-size: 40px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+}
+
+.inv-item__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.inv-item__line {
+    inline-size: 70%;
+    block-size: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+}
+
+.inv-item__line.short {
+    inline-size: 40%;
+}
+
+.inv-item__tag {
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-sec-light);
+}
+
+.inv-item__tag.warn {
+    color: #ff4d4d;
+    background: rgba(255, 77, 77, 0.1);
+}
