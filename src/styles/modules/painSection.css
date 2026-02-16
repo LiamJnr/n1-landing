@@ -215,6 +215,28 @@
     padding-inline: var(--padding-clamp16to8);
 }
 
+.products-showcase__title-wrapper {
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.products-showcase__title-wrapper>* {
+    flex: 1 1 var(--width-clamp260to180);
+}
+
+.products-showcase__title {
+    font-size: var(--font-clamp24to18);
+    color: var(--off-white);
+    line-height: 1.2;
+}
+
+.products-showcase-subtitle {
+    color: var(--text-sec-light);
+}
+
 .product-showcase__cntnr {
     /* wraps the cards */
     inline-size: 100%;

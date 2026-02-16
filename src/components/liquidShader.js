@@ -518,7 +518,7 @@ export function liquidShader() {
       col = mix(col, vec3(0.85, 1.00, 1.00), clamp(v * 3.5 - 2.8, 0.0, 1.0));
 
       float bloom = smoothstep(0.55, 0.0, length(q));
-      col += vec3(0.02, 0.00, 0.08) * (1.0 - bloom);
+      col += vec3(0.02, 0.00, 0.40) * (1.0 - bloom);
 
       vec2 qq = q * 1.1;
       col *= clamp(1.0 - dot(qq, qq), 0.0, 1.0);
